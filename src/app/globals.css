@@ -14,13 +14,13 @@
   --night-background: #111815;
   --night-surface: #1b2620;
   --night-well: #16201b;
-  --night-wash: #26392e;
+  --night-wash: #203649;
   --night-ink: #e8f0eb;
   --night-muted: #b2c3b6;
   --night-line: #3b5042;
-  --night-border-strong: #86b497;
-  --night-accent: #86ddb9;
-  --night-accent-fill: #137c66;
+  --night-border-strong: #66c3ff;
+  --night-accent: #66c3ff;
+  --night-accent-fill: var(--night-accent);
   --night-peach: #3b2d22;
   --night-peach-text: #efc69d;
   --night-error: #ffb4a5;
@@ -32,11 +32,12 @@
   --muted: light-dark(#626e60, var(--night-muted));
   --line: light-dark(#e3e7e1, var(--night-line));
   --green: light-dark(#137c66, var(--night-accent));
-  --green-dark: light-dark(#08614e, #a7efd0);
+  --green-dark: light-dark(#08614e, #99d7ff);
   --green-wash: light-dark(#edf5ee, var(--night-wash));
   --peach: light-dark(#faeee5, var(--night-peach));
-  --action-fill: #137c66;
-  --action-hover: #08614e;
+  --action-fill: light-dark(#137c66, var(--night-accent));
+  --action-hover: light-dark(#08614e, #99d7ff);
+  --action-ink: light-dark(white, #09283c);
 }
 
 :root[data-theme="light"] {
@@ -132,7 +133,7 @@ svg {
   left: 20px;
   padding: 12px 20px;
   background: var(--action-hover);
-  color: white;
+  color: var(--action-ink);
   border-radius: 8px;
 }
 .skip-link:focus {
@@ -367,7 +368,7 @@ svg {
 }
 .button--primary {
   background: var(--action-fill);
-  color: white;
+  color: var(--action-ink);
   box-shadow: 0 2px 2px light-dark(#102f1710, var(--night-shadow));
 }
 .button--primary:hover:not(:disabled) {
@@ -624,7 +625,7 @@ svg {
   place-items: center;
   border-radius: 50%;
   background: var(--action-fill);
-  color: white;
+  color: var(--action-ink);
   border: 3px solid light-dark(#f5f8f0, var(--night-line));
 }
 .upload-dropzone h2 {
@@ -1373,7 +1374,7 @@ svg {
   background: light-dark(#fff, var(--night-surface));
   display: grid;
   place-items: center;
-  color: white;
+  color: var(--action-ink);
 }
 .page-card--selected .page-checkbox {
   background: light-dark(#4c8452, var(--night-accent-fill));

@@ -28,7 +28,7 @@ export function Logo({ onNavigate }: { onNavigate?: () => void }) {
         <rect x="10" y="1" width="23" height="29" rx="5" fill="currentColor" />
         <path
           d="M17 10h10M17 15h7M17 20h4"
-          stroke="white"
+          stroke="var(--action-ink)"
           strokeWidth="2.2"
           strokeLinecap="round"
         />
