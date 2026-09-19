@@ -33,7 +33,8 @@ No environment variables, storage services, or backend configuration are require
 
 ## Features
 
-- Upload or drop up to 20 PDFs, each up to 50 MB. Filenames, sizes, and page counts come from the actual documents. Corrupt, unsupported, empty, and encrypted PDFs produce readable errors.
+- Upload or drop up to 20 PDFs, each up to 100 MB. Filenames, sizes, and page counts come from the actual documents. Corrupt, unsupported, empty, and encrypted PDFs produce readable errors.
+- Dark theme by default, with a light/dark toggle beside the header privacy link on desktop and mobile. Only the theme preference is saved in localStorage; PDF contents are never persisted.
 - Merge in the exact displayed order. Drag files, use keyboard-accessible move buttons, sort by name, remove files, or clear the workspace. Download the result as `merged.pdf`.
 - Split using real PDF.js thumbnails. Select individual pages into one PDF, or enable the existing one-PDF-per-page option.
 - Enter ranges such as `1-3, 5, 8-10`, or use the From/To controls. Each range creates a separate PDF, matching the existing interface. Download multiple outputs individually from the result links.

@@ -11,7 +11,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils/cn";
 import { Button } from "@/components/ui/button";
-import { validateFiles } from "@/lib/utils/files";
+import { MAX_FILE_SIZE_MB, MAX_FILES, validateFiles } from "@/lib/utils/files";
 
 export function UploadDropzone({
   onFiles,
@@ -124,7 +124,8 @@ export function UploadDropzone({
         {multiple ? "Choose PDF files" : "Choose a PDF file"}
       </Button>
       <span className="upload-limit">
-        PDF files · Up to 50 MB each{multiple ? " · 20 files max" : ""}
+        PDF files · Up to {MAX_FILE_SIZE_MB} MB each
+        {multiple ? ` · ${MAX_FILES} files max` : ""}
       </span>
       {!compact && (
         <div className="upload-local">

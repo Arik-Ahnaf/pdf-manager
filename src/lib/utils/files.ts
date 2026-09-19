@@ -1,4 +1,5 @@
-export const MAX_FILE_SIZE = 50 * 1024 * 1024;
+export const MAX_FILE_SIZE_MB = 100;
+export const MAX_FILE_SIZE = MAX_FILE_SIZE_MB * 1024 * 1024;
 export const MAX_FILES = 20;
 
 export function formatFileSize(bytes: number) {
@@ -21,7 +22,7 @@ export function validateFiles(files: Pick<File, "name" | "type" | "size">[]) {
     if (file.size === 0)
       return `“${file.name}” is empty. Please choose another PDF.`;
     if (file.size > MAX_FILE_SIZE)
-      return `“${file.name}” is too large. The limit is 50 MB per file.`;
+      return `“${file.name}” is too large. The limit is ${MAX_FILE_SIZE_MB} MB per file.`;
   }
   return null;
 }

@@ -3,6 +3,7 @@ import "@fontsource-variable/dm-sans";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { FileSelectionProvider } from "@/hooks/use-file-selection";
+import { themeInitScript } from "@/lib/utils/theme";
 
 export const metadata: Metadata = {
   title: {
@@ -17,7 +18,10 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <FileSelectionProvider>
           <a className="skip-link" href="#main-content">

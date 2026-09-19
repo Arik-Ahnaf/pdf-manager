@@ -22,7 +22,7 @@ import { ImportStatus } from "@/components/pdf/import-status";
 import { ActionToolbar } from "@/components/pdf/action-toolbar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { formatFileSize } from "@/lib/utils/files";
+import { formatFileSize, MAX_FILE_SIZE_MB } from "@/lib/utils/files";
 
 export function MergeWorkspace() {
   const { files, setFiles, importFiles, loading, error, clearError } =
@@ -156,7 +156,9 @@ export function MergeWorkspace() {
                       >
                         Add more files
                       </FilePicker>
-                      <small>Or drop PDFs here · Up to 50 MB each</small>
+                      <small>
+                        Or drop PDFs here · Up to {MAX_FILE_SIZE_MB} MB each
+                      </small>
                     </div>
                   </div>
                 ) : (

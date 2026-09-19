@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { ArrowUpRight, Menu, ShieldCheck, X } from "lucide-react";
 import { Logo } from "./logo";
+import { ThemeToggle } from "./theme-toggle";
 import { cn } from "@/lib/utils/cn";
 
 const links = [
@@ -44,25 +45,29 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/privacy"
-          className="header-privacy"
-          onClick={() => setOpen(false)}
-        >
-          <ShieldCheck size={17} />
-          <span>Yours. Always private.</span>
-          <ArrowUpRight size={14} />
-        </Link>
-        <button
-          id="mobile-menu-toggle"
-          className="icon-button mobile-toggle"
-          aria-label={open ? "Close navigation" : "Open navigation"}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="header-actions">
+          <Link
+            href="/privacy"
+            className="header-privacy"
+            aria-label="Privacy — Yours. Always private."
+            onClick={() => setOpen(false)}
+          >
+            <ShieldCheck size={17} />
+            <span>Yours. Always private.</span>
+            <ArrowUpRight size={14} />
+          </Link>
+          <ThemeToggle />
+          <button
+            id="mobile-menu-toggle"
+            className="icon-button mobile-toggle"
+            aria-label={open ? "Close navigation" : "Open navigation"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen(!open)}
+          >
+            {open ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </div>
       {open && (
         <nav

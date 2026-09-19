@@ -27,8 +27,8 @@ const principles = [
   },
   {
     icon: Database,
-    title: "Nothing saved behind the scenes.",
-    text: "Your files and generated PDFs live in temporary browser memory. Refreshing or closing the page clears the workspace. We don’t store your PDFs in localStorage or a database.",
+    title: "Your documents stay temporary.",
+    text: "Your files and generated PDFs live in temporary browser memory. Refreshing or closing the page clears the workspace. Only your light or dark theme preference is saved locally; PDFs are never stored in localStorage or a database.",
   },
   {
     icon: FileLock2,
